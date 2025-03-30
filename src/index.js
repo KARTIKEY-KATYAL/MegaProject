@@ -1,22 +1,20 @@
 import app from "./app.js";
-import dotenv from "dotenv"
-import connectdb from "./db/index.js";
+import dotenv from "dotenv";
+import connectDB from "./db/index.js";
 
 dotenv.config({
-    path: './.env'
+    path : './.env'
 })
-const PORT = process.env.PORT || 8000
 
-// In production process.env runs only
-// If port is not mentoined then app will definatly crash in production
+const PORT = process.env.PORT || 3000
 
-connectdb()
+connectDB()
     .then(()=>{
-        app.listen(PORT , ()=>{console.log('DB Connected at ',PORT)})
+        app.listen(PORT,()=>{
+            console.log(`App is connected at PORT : ${PORT}`)
+        })
     })
     .catch((err)=>{
-        console.log(`MongoDB Connection Error ${err}`)
+        console.log('Error connecting to db',err)
         process.exit(1)
     })
-
-

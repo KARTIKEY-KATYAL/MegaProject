@@ -1,22 +1,30 @@
 {
   "name": "megaproject",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A project management system built with Node.js and Express",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.1"
   },
   "devDependencies": {
-    "prettier": "^3.5.3"
-  }
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.2.5"
+  },
+  "author": "Kartikey Katyal kartikeykatyal2003@gmail.com",
+  "license": "ISC"
 }
